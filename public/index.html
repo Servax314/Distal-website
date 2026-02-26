@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Your Lab Name</title>
+  <meta name="description" content="We research scalable intelligence and foundational machine learning systems." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Your Lab Name" />
+  <meta property="og:description" content="Frontier research in scalable intelligence." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="/assets/css/helios.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <!-- <a class="brand" href="/" aria-label="Home">
+        <strong>Your Lab Name</strong>
+      </a> -->
+        <pre class="ascii ascii-header" aria-hidden="true"><code>
+─────────────────────────────────────────
+Distal  ·  Frontier Research
+─────────────────────────────────────────
+        </code></pre>
+
+      <div class="nav-links">
+        <a href="research.html">Research</a>
+        <a href="career.html">Careers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" class="container">
+    <h1>We research scalable intelligence.</h1>
+
+    <p class="lede">
+      Our work focuses on foundational questions in representation learning, efficient training
+      systems, and robust generalization. We build and study models that extend the limits of
+      learning and reasoning.
+    </p>
+
+    <section class="section" aria-labelledby="research">
+      <h2 id="research">Research</h2>
+      <p>
+        We investigate computational principles that enable learning systems to adapt, generalize,
+        and operate efficiently under real-world constraints.
+      </p>
+
+      <figure class="ascii">
+        <pre aria-label="Gradient matrix"><code>
+            · · · · · · · · ·                   · · · · · · · · ·
+            · · · · → → → · ·
+            · · · ↗ ↑ ↑ ↑ ↘ ·
+            · · ↗ ↑ ↑ ↑ ↑ ↑ ↘
+            · → → ↑ ↑ ↑ ↑ ↑ →
+            · · ↘ ↑ ↑ ↑ ↑ ↑ ↗
+            · · · ↘ ↑ ↑ ↑ ↗ ·
+            · · · · → → → · ·
+            · · · · · · · · ·
+        </code></pre>
+      </figure>
+
+      <pre id="ascii-player" class="ascii ascii-anim"></pre>
+
+<script src="/assets/js/ascii-player.js"></script>
+
+      <ul class="list">
+        <li>Representation learning for structured environments</li>
+        <li>Efficient training algorithms and systems design</li>
+        <li>Robust generalization under distribution shift</li>
+        <li>Memory and inference architectures</li>
+      </ul>
+
+      <figure class="ascii">
+        <pre aria-label="Cluster network diagram"><code>
+                Sensorimotor stream: (feature z_t, pose p_t)
+                                    │
+                                    ▼
+                ┌───────────────────────────────────────────┐
+                │   Many Cortical Columns (parallel models) │
+                └───────────────────────────────────────────┘
+                    │            │             │            │
+                    ▼            ▼             ▼            ▼
+            ┌────────┐   ┌────────┐    ┌────────┐   ┌────────┐
+            │ Column │   │ Column │    │ Column │   │ Column │
+            │   C1   │   │   C2   │    │   C3   │   │   Ck   │
+            └───┬────┘   └───┬────┘    └───┬────┘   └───┬────┘
+                │            │             │            │
+                │ learns     │ learns      │ learns     │ learns
+                │ local      │ local       │ local      │ local
+                │ model      │ model       │ model      │ model
+                ▼            ▼             ▼            ▼
+            [Graph M1]   [Graph M2]    [Graph M3]   ... [Graph Mk]
+                │            │             │
+                └──────┬─────┴──────┬──────┘
+                        │  union / consensus (object ID)
+                        ▼
+                ┌────────────────────────────────────┐
+                │   Object Graph Memory (long-term)  │
+                │                                    │
+                │   O_j : nodes = { (z, p) }         │
+                │         edges = transitions        │
+                │         + votes from columns       │
+                └────────────────────────────────────┘
+                        │
+                        ▼
+                    Stable hypothesis:  argmax_j  Π_i  p_i(O_j | z_t, p_t)        </code></pre>
+        <figcaption>Cluster topology (gateway, VLANs, login, controller, compute, storage).</figcaption>
+        </figure>
+    </section>
+
+    <section class="section" aria-labelledby="work">
+      <h2 id="work">Selected Work</h2>
+
+      <ul class="list">
+        <li><a href="#">Scalable Object-Centric Inference (2026)</a></li>
+        <li><a href="#">Learning Structured World Models (2025)</a></li>
+        <li><a href="#">Adaptive Inductive Bias in Deep Systems (2025)</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="careers">
+      <h2 id="careers">Careers</h2>
+      <p>
+        We are hiring research engineers and scientists interested in advancing core machine
+        learning capabilities. See open roles <a href="/careers/">here</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Your Lab Name</span>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

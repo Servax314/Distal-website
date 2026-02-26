@@ -1,0 +1,35 @@
+/* assets/css/themes/retro/tokens.css */
+:root {
+  --maxw: 54rem;
+
+  /* Paper / ink */
+  --bg: #fbf7ef;
+  --fg: #1b1b1b;
+  --muted: #4a4a4a;
+
+  /* Old-school link blue + visited purple */
+  --accent: #1a4fff;
+  --border: #2b2b2b;
+
+  --pad-x: 1.5rem;
+  --pad-y: 3.5rem;
+
+  --radius: 0px; /* sharp edges */
+  --focus: 2px dotted var(--fg);
+
+  /* Type */
+  --font-body: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* Optional: keep it paper-like even if user prefers dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f0f;
+    --fg: #f2f2f2;
+    --muted: #c9c9c9;
+    --accent: #7aa2ff;
+    --border: #f2f2f2;
+    --focus: 2px dotted var(--fg);
+  }
+}

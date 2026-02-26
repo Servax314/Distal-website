@@ -1,0 +1,30 @@
+:root {
+  --maxw: 54rem;
+
+  --bg: #ffffff;
+  --fg: #111827;
+  --muted: #4b5563;
+
+  --accent: #1f4ed8;
+  --border: #d1d5db;
+
+  --pad-x: 1.75rem;
+  --pad-y: 4rem;
+
+  --radius: 6px;
+  --focus: 2px solid var(--accent);
+
+  --font-body: ui-serif, "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --muted: #a7b0bb;
+
+    --accent: #93c5fd;
+    --border: #22304a;
+  }
+}

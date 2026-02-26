@@ -1,0 +1,77 @@
+/* assets/css/themes/retro/overrides.css */
+
+/* Body typography + “print” vibe */
+body {
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+}
+
+/* Headings: slightly heavier, classic */
+h1, h2 {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+/* Links: always underlined, like old web / academic */
+a {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 2px;
+}
+
+a:visited {
+  color: #5a2aa6;
+}
+
+a:hover {
+  text-decoration-style: wavy;
+}
+
+/* Borders: strong, boxy */
+.site-header,
+.site-footer {
+  border-color: var(--border);
+}
+
+/* Nav: more “document header” than modern topbar */
+.nav {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.brand strong {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Lists: tighter, more textbook */
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+/* ASCII: pure terminal block */
+.ascii pre {
+  font-family: var(--font-mono);
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 0;
+  padding: 1rem;
+}
+
+/* Optional: subtle “horizontal rules” feeling */
+.section {
+  padding-top: 1.25rem;
+  border-top: 1px dotted var(--border);
+}
+
+.section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Footer: compact */
+.footer-inner {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}

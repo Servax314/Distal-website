@@ -1,0 +1,19 @@
+:root {
+  --maxw: 60rem;
+
+  --bg: #ffffff;
+  --fg: #000000;
+  --muted: #2b2b2b;
+
+  --accent: #ff2d2d;
+  --border: #000000;
+
+  --pad-x: 1.25rem;
+  --pad-y: 3rem;
+
+  --radius: 0px;
+  --focus: 3px solid var(--accent);
+
+  --font-body: ui-sans-serif, system-ui, Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+}

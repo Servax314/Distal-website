@@ -1,0 +1,7 @@
+a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent), transparent 45%); }
+a:hover { border-bottom-color: var(--accent); }
+
+.ascii pre {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border);
+}

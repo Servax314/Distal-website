@@ -1,0 +1,23 @@
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x);
+}
+
+.section {
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 3rem var(--pad-x);
+  }
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}

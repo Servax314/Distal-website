@@ -1,0 +1,25 @@
+:root {
+  --maxw: 52rem;
+
+  --fg: #0d0f12;
+  --bg: #f8f9fa;
+  --muted: #5b616b;
+
+  --accent: #1f3cff;
+  --border: #e5e7eb;
+
+  --pad-x: 1.5rem;
+  --pad-y: 4rem;
+
+  --radius: 10px;
+  --focus: 2px solid var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #f3f4f6;
+    --bg: #0b0d10;
+    --muted: #9aa4b2;
+    --border: #1f2937;
+  }
+}

@@ -1,0 +1,12 @@
+/* Old terminal feel */
+a { text-decoration: underline; }
+a:hover { filter: brightness(1.15); }
+
+.site-header, .site-footer { border-color: var(--border); }
+
+/* ASCII should feel native: no card, just frame */
+.ascii pre {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
