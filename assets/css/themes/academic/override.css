@@ -1,9 +1,4 @@
 /* A little more “paper-like” hierarchy */
 h1, h2 { letter-spacing: -0.01em; }
 
-/* Figure-like ASCII */
-.ascii pre {
-  background: transparent;
-  border-style: solid;
-}
-.ascii figcaption { font-style: italic; }
+.c-ascii-graph figcaption { font-style: italic; }

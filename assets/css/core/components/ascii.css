@@ -1,0 +1,39 @@
+.c-ascii-graph {
+  margin: 1.25rem 0;
+}
+
+.c-ascii-graph pre,
+pre.c-ascii-anim {
+  margin: 0;
+  padding: clamp(0.35rem, 1.2vw, 1.25rem);
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.25;
+  overflow: hidden;
+  white-space: pre;
+  min-width: 0;
+}
+
+.c-ascii-graph code,
+pre.c-ascii-anim code { font-family: inherit; font-size: inherit; }
+
+/* Avoid layout shift for animation */
+pre.c-ascii-anim {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}

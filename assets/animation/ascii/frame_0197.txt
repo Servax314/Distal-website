@@ -1,0 +1,19 @@
+ &         &   W         W      M   M   MM        # #  ##  #        * *      o  
+         & W   W       WMM      M   M                      **                   
+          W     W    M             ##                       * * ***      oo oo o
+&         W     W          M       #    ## #      #* *           o          o   
+                              ##        ###         **   ***   o           a   a
+  W  W                M  #                     *    **     oo     oo  o    aa   
+  WW W     M    M           #     #       *  *   *             oo  o      aa aa 
+W             M              ##                *                o       a       
+W    M     MMM                                        o                         
+M        M              ##         *                                 aa   a    h
+ MM              # ##         *      **                                  ahh    
+ M    #  #          ##           *                     a     a                  
+                  #                                    aa  a a     hhh    h h  h
+ ##                                    o             a              h       h   
+#         ####   *          o     oo                   a                     k  
+             *      *    o   o         a                       h     h kk   kk  
+#               *   *        o             aa                  hh  h   kk   k  k
+#       *                                              h                        
+       *  *                  a            a        h                kk      k   

@@ -1,11 +1,6 @@
-a { text-decoration: underline; text-decoration-thickness: 2px; }
+a { text-decoration: none; }
 
 .site-header, .site-footer { border-width: 2px; }
-.ascii pre {
-  background: transparent;
-  border: 2px solid var(--border);
-  border-radius: 0;
-}
 
 /* Strong section separators */
 .section { border-top: 2px solid var(--border); padding-top: 1rem; }

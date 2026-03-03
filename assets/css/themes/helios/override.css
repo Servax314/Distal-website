@@ -1,2 +1,8 @@
-a { text-decoration: underline; text-decoration-thickness: 1px; }
-.ascii pre { background: transparent; border-style: solid; }
+a { text-decoration: none; }
+
+/* Helios-only section kickers */
+.section + .section {
+  border-top: 2px solid color-mix(in srgb, var(--border) 70%, var(--fg) 30%);
+  margin-top: 4.25rem;
+  padding-top: 1.35rem;
+}

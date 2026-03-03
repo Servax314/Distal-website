@@ -1,4 +1,4 @@
-/* assets/css/themes/retro/overrides.css */
+/* assets/css/themes/retro/override.css */
 
 /* Body typography + “print” vibe */
 body {
@@ -12,11 +12,9 @@ h1, h2 {
   font-weight: 700;
 }
 
-/* Links: always underlined, like old web / academic */
+/* Links: no underline by default; style on hover only */
 a {
-  text-decoration: underline;
-  text-decoration-thickness: from-font;
-  text-underline-offset: 2px;
+  text-decoration: none;
 }
 
 a:visited {
@@ -24,6 +22,9 @@ a:visited {
 }
 
 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 2px;
   text-decoration-style: wavy;
 }
 
@@ -48,15 +49,6 @@ a:hover {
 /* Lists: tighter, more textbook */
 .list li {
   margin-bottom: 0.5rem;
-}
-
-/* ASCII: pure terminal block */
-.ascii pre {
-  font-family: var(--font-mono);
-  background: transparent;
-  border: 1px dashed var(--border);
-  border-radius: 0;
-  padding: 1rem;
 }
 
 /* Optional: subtle “horizontal rules” feeling */

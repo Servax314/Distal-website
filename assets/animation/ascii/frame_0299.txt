@@ -1,0 +1,19 @@
+&   &&&        W W    W  WW  M        M        #   ##  # #  #  *   **  **    o  
+&        &      WW       M     M  MM         ##    ###     *  *    **  oo o  o  
+& &      WW      W       M       MM           ## #   #        ** * *oo       ooo
+ &   W   WW WW                 M           #   ###  **    **    *    ooo    o  a
+WW   WWW WW       M M        # #          ##   ** **    ****  oo          oaa aa
+W WW                   M ###  ##    # #    #*  ** **    *     o     ooo   a     
+W W         M      M  # ## ###     # # ##* ** * ***  *oooo   oooo   oaa    a aa 
+WWWWMM MM   M    M## # ### MM)&M\1-#*******^`  ***o **>)wW o o oo   a     a  aa 
+WM        M   M #      #,M{/cvvM:{?#`>#><##l  *#>?nJWWp&&&`o  aaa       a     a 
+MM            #   # #M?j&WI~)tr}fnu-/r1#<##+\o\i}xw#@&&#$%`a       a     aaaa hh
+M  MM             # #M(xt)'I)tr(rtt>#->>#~#x#oInYOLcZ&&#&&`aa aa   aa     h h  h
+MM M       ##     ##  ,MM<<M~M[><_##+<l;I:;?~ `~?fzu/c0]MLo  a aa   a   h     hh
+M #  #      # #  #     * ********oooooo o oo o oaa  aaaaaaa  aaa    hh    hhhhhh
+#              ##      *    * *oooo oo          aa aaa  aa       h     h  h   kk
+#      #       **      * * * ooo    oo  oo aa  aa  a       aa  hhhhh  h  hhk kkk
+##      #   * *          o o o      oo     aa        aa       h h h         kkkk
+##   # **  *            o          aa   a aa         ah      h h    kk k    k kk
+###        ** **  oo o  o   o                            hhh   hh  k kk     k  k
+      *      * oo             aaaa             h    hh hh      kk    kkk    k  k

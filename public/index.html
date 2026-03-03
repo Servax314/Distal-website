@@ -1,86 +1,153 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Your Lab Name</title>
-  <meta name="description" content="We research scalable intelligence and foundational machine learning systems." />
+  <meta name="description" content="Frontier research in scalable intelligence." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Your Lab Name" />
   <meta property="og:description" content="Frontier research in scalable intelligence." />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="/assets/img/logo.png" />
 
-  <link rel="stylesheet" href="/assets/css/helios.css" />
+  <!-- Theme entrypoint (swapped by JS) -->
+  <link id="theme-css" rel="stylesheet" href="/assets/css/helios.css" />
 </head>
 
-<body>
+<body class="page page-home">
+  <!-- Scroll progress -->
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <!-- <a class="brand" href="/" aria-label="Home">
-        <strong>Your Lab Name</strong>
-      </a> -->
-        <pre class="ascii ascii-header" aria-hidden="true"><code>
-─────────────────────────────────────────
-Distal  ·  Frontier Research
-─────────────────────────────────────────
-        </code></pre>
+      <a class="brand" href="./index.html" aria-label="Home">
+        <img class="brand-logo" src="/assets/img/name_logo.png" alt="Your Lab Name" />
+      </a>
 
-      <div class="nav-links">
-        <a href="research.html">Research</a>
-        <a href="career.html">Careers</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="#research">Research</a>
+          <a href="#careers">Careers</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Theme toggle -->
+        <label class="theme-label" for="theme-select">Theme</label>
+        <select id="theme-select" class="theme-select" aria-label="Select theme">
+          <option value="retro">retro</option>
+          <option value="modern">modern</option>
+          <option value="terminal">terminal</option>
+          <option value="academic">academic</option>
+          <option value="brutalist">brutalist</option>
+          <option value="noir">noir</option>
+          <option value="helios">helios</option>
+          <option value="nord">nord</option>
+        </select>
       </div>
     </nav>
   </header>
 
   <main id="content" class="container">
-    <h1>We research scalable intelligence.</h1>
+    <section class="section c-support-banner" aria-label="Supporters">
+      <p>Supported by</p>
+      <div class="c-logo-row">
+        <img class="c-logo-item" src="/assets/img/ethz-logo.png" alt="ETH Zurich" />
+        <img class="c-logo-item" src="/assets/img/numenta-logo.png" alt="Numenta" />
+      </div>
+    </section>
 
-    <p class="lede">
-      Our work focuses on foundational questions in representation learning, efficient training
-      systems, and robust generalization. We build and study models that extend the limits of
-      learning and reasoning.
-    </p>
+    <section class="section" aria-label="ASCII animation">
+      <pre
+        id="ascii-player"
+        class="c-ascii-anim"
+        aria-label="ASCII animation"
+        data-ascii-player
+        data-crop-trim="true"
+        data-frame-path="/assets/animation/ascii/"
+        data-prefix="frame_"
+        data-ext=".txt"
+        data-pad="4"
+        data-start="1"
+        data-total="300"
+        data-fps="30"
+        data-preload="true"
+      ><code>Loading…</code></pre>
+    </section>
 
     <section class="section" aria-labelledby="research">
       <h2 id="research">Research</h2>
-      <p>
-        We investigate computational principles that enable learning systems to adapt, generalize,
-        and operate efficiently under real-world constraints.
+      <h3 id="research">Subheader 1</h3>
+      <p>§
+        Paragraph example. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br>
+        <br>
+        ASCII diagrams side by side.
       </p>
 
-      <figure class="ascii">
-        <pre aria-label="Gradient matrix"><code>
-            · · · · · · · · ·                   · · · · · · · · ·
-            · · · · → → → · ·
-            · · · ↗ ↑ ↑ ↑ ↘ ·
-            · · ↗ ↑ ↑ ↑ ↑ ↑ ↘
-            · → → ↑ ↑ ↑ ↑ ↑ →
-            · · ↘ ↑ ↑ ↑ ↑ ↑ ↗
-            · · · ↘ ↑ ↑ ↑ ↗ ·
-            · · · · → → → · ·
-            · · · · · · · · ·
-        </code></pre>
-      </figure>
+      <div class="c-graph-grid" role="list" aria-label="Gradient matrices">
+        <figure class="c-ascii-graph" role="listitem">
+          <pre aria-label="Gradient matrix 1"><code>
+· · · · · · · · ·
+· · · · → → → · ·
+· · · ↗ ↑ ↑ ↑ ↘ ·
+· · ↗ ↑ ↑ ↑ ↑ ↑ ↘
+· → → ↑ ↑ ↑ ↑ ↑ →
+· · ↘ ↑ ↑ ↑ ↑ ↑ ↗
+· · · ↘ ↑ ↑ ↑ ↗ ·
+· · · · → → → · ·
+· · · · · · · · ·
+          </code></pre>
+        </figure>
+        <figure class="c-ascii-graph" role="listitem">
+          <pre aria-label="Gradient matrix 2"><code>
+· · · · · · · · ·
+· · ↗ ↗ ↑ ↖ ↖ · ·
+· ↗ ↑ ↑ ↑ ↑ ↑ ↖ ·
+↗ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↖
+→ → → ↑ ↑ ↑ ← ← ←
+↘ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↗
+· ↘ ↓ ↓ ↓ ↓ ↓ ↗ ·
+· · ↘ ↘ ↓ ↙ ↙ · ·
+· · · · · · · · ·
+          </code></pre>
+        </figure>
+        <figure class="c-ascii-graph" role="listitem">
+          <pre aria-label="Gradient matrix 3"><code>
+· · · · · · · · ·
+· ↘ ↓ ↓ ↓ ↓ ↓ ↙ ·
+· · ↘ ↓ ↓ ↓ ↙ · ·
+· · · ↘ ↓ ↙ · · ·
+→ → → → ↓ ← ← ← ←
+· · · ↗ ↑ ↖ · · ·
+· · ↗ ↑ ↑ ↑ ↖ · ·
+· ↗ ↑ ↑ ↑ ↑ ↑ ↖ ·
+· · · · · · · · ·
+          </code></pre>
+        </figure>
+      </div>
 
-      <pre id="ascii-player" class="ascii ascii-anim"></pre>
+      <div class="c-text-diagram">
+        <div>
+          <h3>Subheader 2</h3>
+          <p>
+          Example of text content placed next to an ASCII diagram.<br>
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        </div>
 
-<script src="/assets/js/ascii-player.js"></script>
-
-      <ul class="list">
-        <li>Representation learning for structured environments</li>
-        <li>Efficient training algorithms and systems design</li>
-        <li>Robust generalization under distribution shift</li>
-        <li>Memory and inference architectures</li>
-      </ul>
-
-      <figure class="ascii">
-        <pre aria-label="Cluster network diagram"><code>
+        <figure class="c-ascii-graph">
+          <pre aria-label="TBS diagram"><code>
                 Sensorimotor stream: (feature z_t, pose p_t)
                                     │
                                     ▼
@@ -113,35 +180,93 @@ Distal  ·  Frontier Research
                         │
                         ▼
                     Stable hypothesis:  argmax_j  Π_i  p_i(O_j | z_t, p_t)        </code></pre>
-        <figcaption>Cluster topology (gateway, VLANs, login, controller, compute, storage).</figcaption>
         </figure>
+      </div>
     </section>
 
-    <section class="section" aria-labelledby="work">
-      <h2 id="work">Selected Work</h2>
+    <section class="section" aria-labelledby="about">
+      <h2 id="about">About</h2>
+      <h3>Text next to image</h3>
+      <div class="c-statement-image">
+        <div class="c-statement">
+          <h3>Who are we</h3>
+          <p>
+            <br>
+            <br>
+            Some statement.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-      <ul class="list">
-        <li><a href="#">Scalable Object-Centric Inference (2026)</a></li>
-        <li><a href="#">Learning Structured World Models (2025)</a></li>
-        <li><a href="#">Adaptive Inductive Bias in Deep Systems (2025)</a></li>
-      </ul>
+          </p>
+        </div>
+        <figure class="c-ascii-graph c-ascii-graph-large">
+          <pre aria-label="Large ASCII diagram from output2.txt" data-ascii-src="/assets/img/output2.txt"><code>Loading large ASCII diagram…</code></pre>
+        </figure>
+      </div>
     </section>
 
     <section class="section" aria-labelledby="careers">
       <h2 id="careers">Careers</h2>
+      <h3 id="careers">Why join?</h3>
       <p>
-        We are hiring research engineers and scientists interested in advancing core machine
-        learning capabilities. See open roles <a href="/careers/">here</a>.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      <h3 id="careers">Who you are</h3>
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      <div class="c-cta-card">
+        <pre
+          class="c-ascii-anim"
+          aria-label="ASCII animation preview"
+          data-ascii-player
+          data-frame-path="/assets/animation/ascii/"
+          data-prefix="frame_"
+          data-ext=".txt"
+          data-pad="4"
+          data-start="1"
+          data-total="46"
+          data-fps="18"
+          data-preload="true"
+        ><code>Loading…</code></pre>
+
+        <div class="c-cta-content">
+          <h3>Join us !</h3>
+          <p class="c-subtext">ZURICH &amp; REMOTE</p>
+          <p>
+            Check our openings or send us your CV.
+          </p>
+          <div class="c-cta-actions">
+            <a class="btn" href="./careers.html">Job opening</a>
+            <a class="btn btn-ghost" href="mailto:hello@example.com?subject=Spontaneous%20application">Spontaneous application</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p class="c-contact-line">
+        `c-contact-line` example:
+        for collaboration or recruiting inquiries, reach us at
+        <a href="mailto:hello@example.com">hello@example.com</a>.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© 2026 Your Lab Name</span>
-      <span class="dot" aria-hidden="true">·</span>
-      <a href="/contact/">Contact</a>
+      <div class="footer-left">
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <div class="footer-center">© 2026 DIstal</div>
+      <div class="footer-right">
+        <a href="#">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </footer>
+
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

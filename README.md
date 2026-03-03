@@ -1,257 +1,177 @@
-# Website Architecture
+# Distal Website
 
-This website is intentionally built as a static, HTML/CSS system allowing for theme swapping.
+Static one-page website with theme switching and reusable content components.
 
-There is:
+## Stack
+
+- HTML/CSS/JS only
 - No framework
-- No build system
-- No JS dependency (unless explicitly added later)
+- No build step
 - No CSS preprocessor
 
-### Folder Structure
+## Current Site Shape
 
-```
-assets/css/
-  core/
-    base.css
-    layout.css
-    components.css
+Primary page: `public/index.html`
+
+Section order:
+1. Supported by
+2. Big ASCII animation
+3. Research
+4. About
+5. Careers
+6. Contact
+
+Navigation is in-page anchors (`#research`, `#about`, etc.).
+
+## Project Structure
+
+```txt
+public/
+  index.html
+  careers.html
+  about.html
+  research.html
+  contact.html
+
+assets/
+  css/
+    core/
+      base.css
+      layout.css
+      components.css
+      components/
+        nav.css
+        ascii.css
+        footer.css
     pages/
       home.css
-      research.css
+    themes/
+      <theme>/
+        tokens.css
+        override.css
+    modern.css
+    retro.css
+    nord.css
+    helios.css
+    terminal.css
+    academic.css
+    brutalist.css
+    noir.css
 
-  themes/
-    modern/
-      tokens.css
-      overrides.css
-    retro/
-      tokens.css
-      overrides.css
+  js/
+    main.js
 
-  main.css      # default theme entrypoint
-  retro.css     # retro theme entrypoint
+  img/
+    name_logo.png
+    logo.png
+    ethz-logo.png
+    numenta-logo.png
+
+  animation/
+    ascii/
+      frame_0001.txt ...
 ```
 
--------------------------------------------------------------------------------
+## CSS Layering
 
-### CSS architecture
+- `themes/*/tokens.css`: design tokens (colors, fonts, spacing)
+- `core/base.css`: global element rules
+- `core/layout.css`: container and section geometry
+- `core/components.css` + `core/components/*`: reusable UI pieces
+- `themes/*/override.css`: theme-specific overrides
+- `pages/home.css`: one-page composition and section-specific layout
 
-The CSS is layered intentionally.
+Each theme entrypoint imports these layers.
 
-#### Theme Tokens (Design Variables)
+## HTML Contract
 
-Location:
-```themes/<theme>/tokens.css```
+Keep this high-level structure:
 
-Defines:
-- Colors (--bg, --fg, --accent, --border)
-- Typography (--font-body, --font-mono)
-- Spacing (--pad-x, --pad-y)
-- Layout constraints (--maxw)
-- Radius, focus styles, etc.
-
-This file contains design knobs only.
-No component rules should live here.
-
-
--------------------------------------------------------------------------------
-
-#### Core Base
-
-Location:
-core/base.css
-
-Defines:
-- Global resets
-- Body typography
-- Default heading styles
-- Link defaults
-- Focus styles
-
-This layer establishes global behavior and accessibility.
-
-It should reference theme variables, not hardcoded colors.
-
-Example:
-
-```css
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--fg);
-}
-```
-
--------------------------------------------------------------------------------
-
-#### Core Layout
-
-Location:
-core/layout.css
-
-Defines:
-- .container
-- .section
-- Responsive spacing
-- Page width constraints
-
-This layer controls geometry and spacing.
-It does not define aesthetic styling.
-
-
--------------------------------------------------------------------------------
-
-#### Core Components
-
-Location:
-core/components.css
-
-Defines reusable building blocks:
-
-- .site-header
-- .nav
-- .nav-links
-- .site-footer
-- .list
-- .ascii
-- Other reusable patterns
-
-Structure lives here.
-Decoration should rely on theme variables.
-
-
--------------------------------------------------------------------------------
-
-#### Page-Specific Styles
-
-Location:
-core/pages/*.css
-
-Used for page-level exceptions:
-
-- .page-home .page-lede
-- .page-research .paper-list
-
-These should be minimal and scoped using body classes.
-
-
--------------------------------------------------------------------------------
-
-#### Theme Overrides
-
-Location:
-```themes/<theme>/overrides.css```
-
-Optional.
-
-Used when a theme needs stylistic changes such as:
-- Always-underlined links
-- Dashed borders
-- Section separators
-- Terminal-style ASCII
-
-Overrides should not redefine layout logic.
-
-
--------------------------------------------------------------------------------
-
-#### Entry Points
-
-Each theme has a root-level entry file.
-
-Example:
-
-main.css (modern default)
-```css
-@import url("./themes/modern/tokens.css");
-@import url("./core/base.css");
-@import url("./core/layout.css");
-@import url("./core/components.css");
-@import url("./themes/modern/overrides.css");
-@import url("./core/pages/home.css");
-```
-
-retro.css
-```css
-@import url("./themes/retro/tokens.css");
-@import url("./core/base.css");
-@import url("./core/layout.css");
-@import url("./core/components.css");
-@import url("./themes/retro/overrides.css");
-@import url("./core/pages/home.css");
-```
-
-Switch themes in HTML by changing:
-
-```<link rel="stylesheet" href="/assets/css/main.css" />```
-
-to:
-
-```<link rel="stylesheet" href="/assets/css/retro.css" />```
-
-No markup changes required.
-
-
--------------------------------------------------------------------------------
-
-### HTML Structure Contract
-
-All pages must follow this structure:
 ```html
-<body class="page page-<name>">
-
+<body class="page page-home">
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-header">...</header>
 
   <main id="content" class="container">
-    <header class="page-head">
-      <h1 class="page-title">...</h1>
-      <p class="page-lede">...</p>
-    </header>
-
-    <section class="section">...</section>
+    <section id="..." class="section">...</section>
   </main>
 
   <footer class="site-footer">...</footer>
-
 </body>
 ```
 
-Do not rename structural classes.
-They are part of the CSS contract.
+## Modular Class System
 
+The site now supports reusable component/text classes for copy-paste content blocks.
 
--------------------------------------------------------------------------------
+### Component classes (`c-*`)
 
-### ASCII art system
+- `c-support-banner`: horizontal supporter strip container (label + logos).
+- `c-logo-row`: inline row wrapper for logo groups.
+- `c-logo-item`: per-logo image sizing hook in logo rows.
+- `c-ascii-anim`: animated ASCII block (`<pre data-ascii-player>`).
+- `c-ascii-graph`: static ASCII graph figure wrapper.
+- `c-graph-grid`: responsive multi-column grid for multiple graph blocks.
+- `c-picture`: generic image/media figure container (About visuals, etc.).
+- `c-cta-card`: two-column call-to-action card shell (content + media).
+- `c-cta-content`: text/action column inside a CTA card.
+- `c-contact-line`: constrained-width contact paragraph/info line.
 
-ASCII blocks use:
+### Text semantics
+
+Text styling now relies on semantic HTML elements directly:
+
+- navigation links: `.nav-links a`
+- section headings: `h2`
+- subsection headings: `h3`
+- paragraph copy: `p`
+
+Use semantic tags (`h2`, `h3`, `p`, `figure`, `a`) and reserve `c-*` for reusable components.
+
+## Accessibility + Semantics
+
+- Use real headings for hierarchy (`h2` for top-level sections, `h3` for subsection titles)
+- Prefer `aria-labelledby` when a visible heading exists
+- Use `aria-label` for sections/controls without visible labels
+- Keep section IDs stable so anchor nav keeps working
+
+## ASCII System
+
+Static graph:
+
 ```html
-<figure class="ascii">
+<figure class="c-ascii-graph">
   <pre><code>...</code></pre>
-  <figcaption>Optional caption</figcaption>
 </figure>
 ```
 
-Headers may use:
+Animation:
+
 ```html
-<pre class="ascii ascii-header" aria-hidden="true">...</pre>
+<pre class="c-ascii-anim" data-ascii-player ...>
+  <code>Loading...</code>
+</pre>
 ```
-ASCII styling is defined in components.css and can be themed.
 
+`assets/js/main.js` auto-initializes all `[data-ascii-player]` elements, preloads frames, scales text to the box, and slows animation on hover.
 
--------------------------------------------------------------------------------
+## Theme Switching
 
-### When to Modify What
+Theme CSS is loaded through:
 
-Modify:
+```html
+<link id="theme-css" rel="stylesheet" href="/assets/css/helios.css" />
+```
 
-- tokens.css → change theme 
-- overrides.css → override other css files for a theme
-- base.css → improve readability or accessibility
-- layout.css → adjust spacing or page width
-- components.css → add reusable UI elements
-- pages/*.css → tweak individual pages
+`main.js` supports:
+- query-string override (`?theme=retro`)
+- localStorage persistence
+- dropdown selection (`#theme-select`)
 
-Avoid mixing responsibilities across layers.
+## Editing Rules
+
+- Header/footer/nav behavior should be changed in core component CSS (`core/components/*`)
+- Section composition should be changed in `public/index.html`
+- One-page layout tuning should be changed in `assets/css/pages/home.css`
+- Keep new content modular by reusing `c-*` component classes

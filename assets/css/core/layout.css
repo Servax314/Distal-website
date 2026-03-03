@@ -2,22 +2,32 @@
   max-width: var(--maxw);
   margin: 0 auto;
   padding: var(--pad-y) var(--pad-x);
+  min-width: 0;
+}
+
+main.container {
+  max-width: none;
+  min-width: 0;
 }
 
 .section {
   margin-top: 3.5rem;
+  min-width: 0;
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* If reduced motion: just show everything */
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 560px) {
-  .container {
-    padding: 3rem var(--pad-x);
-  }
-
-  h1 {
-    font-size: 1.85rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
+  .container { padding: 3rem var(--pad-x); }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.25rem; }
 }
