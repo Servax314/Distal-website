@@ -1,177 +1,126 @@
-# Distal Website
+# Distal Site Notes
 
-Static one-page website with theme switching and reusable content components.
+This is a static site.
+No framework. No build step.
+Just HTML, CSS, JS.
 
-## Stack
+## Where I edit things
 
-- HTML/CSS/JS only
-- No framework
-- No build step
-- No CSS preprocessor
+- Main page content: `public/index.html`
+- Home page layout tweaks: `assets/css/pages/home.css`
+- Shared base rules: `assets/css/core/base.css`
+- Shared component rules: `assets/css/core/components/*`
+- JS behavior (theme, ASCII loaders, animation): `assets/js/main.js`
 
-## Current Site Shape
+## How to run
 
-Primary page: `public/index.html`
+Use any static server.
 
-Section order:
-1. Supported by
-2. Big ASCII animation
-3. Research
-4. About
-5. Careers
-6. Contact
+Example:
 
-Navigation is in-page anchors (`#research`, `#about`, etc.).
-
-## Project Structure
-
-```txt
-public/
-  index.html
-  careers.html
-  about.html
-  research.html
-  contact.html
-
-assets/
-  css/
-    core/
-      base.css
-      layout.css
-      components.css
-      components/
-        nav.css
-        ascii.css
-        footer.css
-    pages/
-      home.css
-    themes/
-      <theme>/
-        tokens.css
-        override.css
-    modern.css
-    retro.css
-    nord.css
-    helios.css
-    terminal.css
-    academic.css
-    brutalist.css
-    noir.css
-
-  js/
-    main.js
-
-  img/
-    name_logo.png
-    logo.png
-    ethz-logo.png
-    numenta-logo.png
-
-  animation/
-    ascii/
-      frame_0001.txt ...
+```bash
+python3 -m http.server 8000
 ```
 
-## CSS Layering
+Then open `http://localhost:8000/public/index.html`.
 
-- `themes/*/tokens.css`: design tokens (colors, fonts, spacing)
-- `core/base.css`: global element rules
-- `core/layout.css`: container and section geometry
-- `core/components.css` + `core/components/*`: reusable UI pieces
-- `themes/*/override.css`: theme-specific overrides
-- `pages/home.css`: one-page composition and section-specific layout
+## How to add text
 
-Each theme entrypoint imports these layers.
+Edit `public/index.html`.
+Each block is a `<section class="section">`.
 
-## HTML Contract
-
-Keep this high-level structure:
+Basic pattern:
 
 ```html
-<body class="page page-home">
-  <a class="skip-link" href="#content">Skip to content</a>
-
-  <header class="site-header">...</header>
-
-  <main id="content" class="container">
-    <section id="..." class="section">...</section>
-  </main>
-
-  <footer class="site-footer">...</footer>
-</body>
+<section class="section" id="my-section" aria-labelledby="my-section-title">
+  <h2 id="my-section-title">Section title</h2>
+  <h3>Small title</h3>
+  <p>Paragraph text.</p>
+</section>
 ```
 
-## Modular Class System
+Use `h2` for section titles.
+Use `h3` for smaller titles inside a section.
+Use `p` for normal text.
 
-The site now supports reusable component/text classes for copy-paste content blocks.
+## How to add pictures
 
-### Component classes (`c-*`)
+Put image files in `assets/img/`.
 
-- `c-support-banner`: horizontal supporter strip container (label + logos).
-- `c-logo-row`: inline row wrapper for logo groups.
-- `c-logo-item`: per-logo image sizing hook in logo rows.
-- `c-ascii-anim`: animated ASCII block (`<pre data-ascii-player>`).
-- `c-ascii-graph`: static ASCII graph figure wrapper.
-- `c-graph-grid`: responsive multi-column grid for multiple graph blocks.
-- `c-picture`: generic image/media figure container (About visuals, etc.).
-- `c-cta-card`: two-column call-to-action card shell (content + media).
-- `c-cta-content`: text/action column inside a CTA card.
-- `c-contact-line`: constrained-width contact paragraph/info line.
-
-### Text semantics
-
-Text styling now relies on semantic HTML elements directly:
-
-- navigation links: `.nav-links a`
-- section headings: `h2`
-- subsection headings: `h3`
-- paragraph copy: `p`
-
-Use semantic tags (`h2`, `h3`, `p`, `figure`, `a`) and reserve `c-*` for reusable components.
-
-## Accessibility + Semantics
-
-- Use real headings for hierarchy (`h2` for top-level sections, `h3` for subsection titles)
-- Prefer `aria-labelledby` when a visible heading exists
-- Use `aria-label` for sections/controls without visible labels
-- Keep section IDs stable so anchor nav keeps working
-
-## ASCII System
-
-Static graph:
+Then in HTML:
 
 ```html
-<figure class="c-ascii-graph">
-  <pre><code>...</code></pre>
+<figure class="c-picture">
+  <img src="/assets/img/your-image.png" alt="Short description" />
 </figure>
 ```
 
-Animation:
+## How to add static ASCII diagrams
+
+### Inline (small)
 
 ```html
-<pre class="c-ascii-anim" data-ascii-player ...>
-  <code>Loading...</code>
-</pre>
+<figure class="c-ascii-graph">
+  <pre aria-label="My ASCII diagram"><code>
+...ascii text...
+  </code></pre>
+</figure>
 ```
 
-`assets/js/main.js` auto-initializes all `[data-ascii-player]` elements, preloads frames, scales text to the box, and slows animation on hover.
+### From file (large)
 
-## Theme Switching
+Put text file in `assets/img/`, then:
 
-Theme CSS is loaded through:
+```html
+<figure class="c-ascii-graph c-ascii-graph-large">
+  <pre data-ascii-src="/assets/img/output2.txt"><code>Loading...</code></pre>
+</figure>
+```
+
+`main.js` loads the file and renders it into the `<pre>`.
+
+## How to add ASCII animation
+
+Frames live in `assets/animation/ascii/` as `frame_0001.txt`, etc.
+
+```html
+<pre
+  class="c-ascii-anim"
+  data-ascii-player
+  data-frame-path="/assets/animation/ascii/"
+  data-prefix="frame_"
+  data-ext=".txt"
+  data-pad="4"
+  data-start="1"
+  data-total="300"
+  data-fps="30"
+  data-preload="true"
+><code>Loading...</code></pre>
+```
+
+## Useful layout classes
+
+- `c-graph-grid`: 3 diagrams side by side
+- `c-text-diagram`: text next to diagram
+- `c-statement-image`: statement on left, image/diagram on right
+- `c-cta-card`: CTA text + media block
+- `c-cta-actions`: row of buttons
+
+## Theme system
+
+Theme CSS entry is:
 
 ```html
 <link id="theme-css" rel="stylesheet" href="/assets/css/helios.css" />
 ```
 
-`main.js` supports:
-- query-string override (`?theme=retro`)
-- localStorage persistence
-- dropdown selection (`#theme-select`)
+Theme files are in `assets/css/themes/<theme>/`.
+The dropdown changes this file at runtime.
 
-## Editing Rules
+## Quick checklist when adding content
 
-- Header/footer/nav behavior should be changed in core component CSS (`core/components/*`)
-- Section composition should be changed in `public/index.html`
-- One-page layout tuning should be changed in `assets/css/pages/home.css`
-- Keep new content modular by reusing `c-*` component classes
+1. Add section in `index.html`
+2. Reuse existing `c-*` classes first
+3. Put images in `assets/img/`
+4. If needed, add small layout tweak in `home.css`
+5. Hard refresh browser
