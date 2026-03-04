@@ -79,13 +79,17 @@
 
 .c-ascii-graph-large .c-large-ascii-image {
   display: block;
-  background: #000;
+  background: transparent;
   width: 100%;
   max-width: 100%;
   max-height: min(78vh, 60rem);
   height: auto;
   object-fit: contain;
   margin-inline: auto;
+}
+
+.c-about-image {
+  margin: 0;
 }
 
 .c-ascii-graph-large .c-ascii-canvas {

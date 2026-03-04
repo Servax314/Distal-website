@@ -27,6 +27,8 @@ pre.c-ascii-anim {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
+  padding: 0;
+  line-height: 1;
   width: 100%;
   max-width: none;
   aspect-ratio: 1 / 1;
@@ -36,4 +38,10 @@ pre.c-ascii-anim {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+pre.c-ascii-anim code {
+  display: block;
+  margin: 0;
+  line-height: 1;
 }

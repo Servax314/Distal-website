@@ -3,6 +3,14 @@ a { text-decoration: none; }
 /* Helios-only section kickers */
 .section + .section {
   border-top: 2px solid color-mix(in srgb, var(--border) 70%, var(--fg) 30%);
-  margin-top: 4.25rem;
-  padding-top: 1.35rem;
+  /* margin-top: 2rem;
+  margin-bottom: 10rem; */
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+/* No kicker directly under the Supported by banner */
+.page-home .c-support-banner + .section {
+  border-top: 0;
+  padding-top: 0;
 }
