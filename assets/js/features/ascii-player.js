@@ -124,7 +124,7 @@
       let lastBoxH = 0;
 
       function shouldAutoAspect() {
-        if (asciiEl.closest('.c-cta-card')) return false;
+        // Let CSS/data-* force ratio if needed; otherwise use frame geometry.
         if (asciiEl.dataset.autoAspect === 'false') return false;
         return !asciiEl.dataset.aspectRatio;
       }

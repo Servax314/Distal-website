@@ -5,7 +5,7 @@ a { text-decoration: none; }
   border-top: 2px solid color-mix(in srgb, var(--border) 70%, var(--fg) 30%);
   /* margin-top: 2rem;
   margin-bottom: 10rem; */
-  padding-bottom: 5rem;
+  padding-bottom: 3.5rem;
   padding-top: 5rem;
 }
 

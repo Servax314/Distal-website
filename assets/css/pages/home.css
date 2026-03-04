@@ -112,7 +112,6 @@
 .c-cta-card > pre.c-ascii-anim {
   grid-area: anim;
   width: min(100%, 22rem);
-  aspect-ratio: 1 / 1;
   justify-self: end;
   min-height: 0;
   max-height: none;
